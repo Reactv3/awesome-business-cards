@@ -22,13 +22,13 @@ body{
 .card .lines{
     position: absolute;
     inset: 0;
-    background-color: rgb(255, 255, 0);
+    background-color: black;
     overflow: hidden;
 }
 
 .card .lines::before{
     content: '';
-    background: linear-gradient(transparent,red, green, blue, transparent);
+    background: linear-gradient(transparent,red,green, blue,transparent);
     width: 700px;
     height: 220px;
     top:50%;
@@ -64,11 +64,10 @@ body{
 .content img{
     width: 50%;
     border-radius: 50%;
-    border: 5px solid rgb(62, 84, 193);
 }
 
 .content .username{
-    color: rgb(72, 123, 233);
+    color: rgb(67,209,209);
     font-size: 30px;
     margin-top: 20px;
     font-weight: bold;
@@ -96,7 +95,7 @@ body{
 }
 
 .services ul li{
-    padding: 6px;
+    padding: 8px;
 }
 
 .services ul li:nth-child(odd){
