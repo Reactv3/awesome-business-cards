@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+.card{
+    position: relative;
+    width: 450px;
+    height: 500px;
+    background-color: white;
+}
+
+.card .lines{
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+.card .lines::before{
+    content: '';
+    background: linear-gradient(transparent,rgb(43, 211, 113),green,transparent);
+    width: 700px;
+    height: 220px;
+    top:50%;
+    left:50%;
+    position: absolute;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+.card .lines::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background-color: #292929;
+}
+
+.card .imgbx{
+    position:absolute;
+    top:80px;
+    left:50%;
+    transform: translateX(-50%);
+    width:150px;
+    height: 150px;
+    background-color: #000000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+    align-items: center;
+    
+}
+
+.card .imgbx::before{
+    content:'';
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(transparent,rgb(49, 213, 161),rgb(177, 205, 38),transparent);
+    animation: animate2 6s linear infinite;
+}
+
+@keyframes animate2{
+    0%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+
+.card .imgbx::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #040404;
+}
+
+.card .imgbx img{
+    position: absolute;
+    z-index: 1;
+    width:150px;
+    height: 150px;
+
+}
+
+
+.content .sign {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 2;
+    left: 50%;
+    top: 50%;
+    font-family: "Clip";
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 20px;
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #23af74,
+      -0.2rem 0.1rem 1rem #358e18, 0.2rem 0.1rem 1rem #1dc828,
+      0 -0.5rem 2rem #059e61, 0 0.5rem 3rem #3d9613;
+    animation: shine 2s forwards, flicker 3s infinite;
+  }
+  
+  @keyframes blink {
+    0%,
+    22%,
+    36%,
+    75% {
+      color: #ffe6ff;
+      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #0a994d,
+        -0.2rem 0.1rem 1rem #11af2e, 0.2rem 0.1rem 1rem #0db667,
+        0 -0.5rem 2rem #349346, 0 0.5rem 3rem #158517;
+    }
+    28%,
+    33% {
+      color: #e5da17;
+      text-shadow: none;
+    }
+    82%,
+    97% {
+      color: #c9e225;
+      text-shadow: none;
+    }
+  }
+  
+  .flicker {
+    animation: shine 2s forwards, blink 3s 2s infinite;
+  }
+  
+  .fast-flicker {
+    animation: shine 2s forwards, blink 10s 1s infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      color: #24ae22;
+      text-shadow: none;
+    }
+    100% {
+      color: #ffe6ff;
+      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #17965f,
+        -0.2rem 0.1rem 1rem #0bbd9c, 0.2rem 0.1rem 1rem #0e9573,
+        0 -0.5rem 2rem #05a548, 0 0.5rem 3rem #079089;
+    }
+  }
+  
+  @keyframes flicker {
+    from {
+      opacity: 1;
+    }
+  
+    4% {
+      opacity: 0.9;
+    }
+  
+    6% {
+      opacity: 0.85;
+    }
+  
+    8% {
+      opacity: 0.95;
+    }
+  
+    10% {
+      opacity: 0.9;
+    }
+  
+    11% {
+      opacity: 0.922;
+    }
+  
+    12% {
+      opacity: 0.9;
+    }
+  
+    14% {
+      opacity: 0.95;
+    }
+  
+    16% {
+      opacity: 0.98;
+    }
+  
+    17% {
+      opacity: 0.9;
+    }
+  
+    19% {
+      opacity: 0.93;
+    }
+  
+    20% {
+      opacity: 0.99;
+    }
+  
+    24% {
+      opacity: 1;
+    }
+  
+    26% {
+      opacity: 0.94;
+    }
+  
+    28% {
+      opacity: 0.98;
+    }
+  
+    37% {
+      opacity: 0.93;
+    }
+  
+    38% {
+      opacity: 0.5;
+    }
+  
+    39% {
+      opacity: 0.96;
+    }
+  
+    42% {
+      opacity: 1;
+    }
+  
+    44% {
+      opacity: 0.97;
+    }
+  
+    46% {
+      opacity: 0.94;
+    }
+  
+    56% {
+      opacity: 0.9;
+    }
+  
+    58% {
+      opacity: 0.9;
+    }
+  
+    60% {
+      opacity: 0.99;
+    }
+  
+    68% {
+      opacity: 1;
+    }
+  
+    70% {
+      opacity: 0.9;
+    }
+  
+    72% {
+      opacity: 0.95;
+    }
+  
+    93% {
+      opacity: 0.93;
+    }
+  
+    95% {
+      opacity: 0.95;
+    }
+  
+    97% {
+      opacity: 0.93;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+
+  .card .list ul{
+    color: white;
+    position: absolute;
+    list-style: none;
+    margin-top:290px;
+    margin-left:150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .card .list li{
+    margin-top:10px;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 18px;
+  }
+
+  .card .list ul li:nth-child(odd){
+    color: rgb(67, 255, 57);
+}
+
+.card .list ul li:nth-child(even){
+    color: rgb(255, 255, 255);
+}
+  
