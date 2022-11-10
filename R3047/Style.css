@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+.card{
+    position: relative;
+    width: 400px;
+    height: 580px;
+    background-color: white;
+}
+
+.card .lines{
+    position: absolute;
+    inset: 0;
+    background-color:orange;
+    overflow: hidden;
+}
+
+.card .lines::before{
+    content: '';
+    background: conic-gradient(transparent,red,rgb(0, 60, 255),red,rgb(0, 60, 255),transparent);
+    width: 700px;
+    height: 220px;
+    top:50%;
+    left:50%;
+    position: absolute;
+    animation: animate 4.5s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+.card .lines::after{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-color: #292929;
+}
+
+.content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.content img{
+    width: 50%;
+    border-radius: 50%;
+}
+
+.content .username{
+    color: orange;
+    font-size: 35px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.content .title{
+    margin-top: 8px;
+    font-size: 18px;
+    color:wheat;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.services {
+    margin-top: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services .title{
+    font-size: 20px;
+    color: orange;    
+}
+
+.services ul{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.services ul li{
+    padding: 8px;
+    color: wheat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.services ul li:nth-child(odd){
+    color:wheat(27,233,132);
+}
+
+.services ul li:nth-child(even){
+    color:orange;
+}
+
