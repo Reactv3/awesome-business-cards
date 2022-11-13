@@ -1,0 +1,5 @@
+Comment ('animation chanhged' to 'feat- animation direction changed' ) amended in git but could not push/change in github.
+Last comment ammended in Github with github desktop, but problem remaining.
+Applied following codes 
+(git fetch origin
+git merge origin/main)
