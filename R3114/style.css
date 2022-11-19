@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.card{
+    position: relative;
+    width: 380px;
+    height: 550px;
+    background-color: white;
+}
+
+.card .lines{
+    position: absolute;
+    inset: 0;
+    background-color: green;
+    overflow: hidden;
+}
+
+.card .lines::before{
+    content: '';
+    background: linear-gradient(transparent,black,black,black,transparent);
+    width: 700px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: translate(-40%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-40%) rotate(360deg);
+    }
+}
+
+.card .lines::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background-color: black;
+}
+
+.content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.content img{
+    width: 50%;
+    border-radius: 80%;
+}
+
+.content .username{
+    color: rgb(0,255,0);
+    font-size: 30px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.content .title{
+    margin-top: 5px;
+    color: white;
+}
+
+.services{
+    margin-top: 20px;
+    color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services .title{
+    font-size: 20px;
+}
+
+.services ul{
+    font-size: 15px;
+}
+
+.services ul li{
+    padding: 10px;
+}
+
+.services ul li:nth-child(odd){
+    color: rgb(255,0,0);
+}
+
+.services ul li:nth-child(even){
+    color: rgb(0,0,255);
+}
